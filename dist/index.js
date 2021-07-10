@@ -28275,6 +28275,8 @@ function wrappy (fn, cb) {
 /***/ 2198:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
+console.log('*** TableActions');
+
 const core = __nccwpck_require__(2584);
 const github = __nccwpck_require__(9207);
 const { graphql } = __nccwpck_require__(8190);
@@ -28805,6 +28807,7 @@ module.exports = require("zlib");;
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
+console.log('Loading TableActions');
 const TableActions = __nccwpck_require__(2198);
 new TableActions().run();
 

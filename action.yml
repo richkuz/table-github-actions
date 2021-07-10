@@ -9,7 +9,7 @@ inputs:
     required: false
   ghToken:
     description: 'A GitHub token with write access to the destination project and read access to the source issue. See https://docs.github.com/en/actions/reference/encrypted-secrets'
-    required: true
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
