@@ -14,9 +14,9 @@ jobs:
         with:
           sync-with-table: |
             [
-              {"label": "team:app-search", "tableNumber": "1"}
+              {"label": "label1", "tableNumber": "1"}
             ]
-          ghToken: ${{ secrets.ELASTIC_ORG_GITHUB_ACTIONS_TOKEN }}
+          ghToken: ${{ secrets.GITHUB_TOKEN }}
   sync_issues_with_table_fields:
     runs-on: ubuntu-latest
     name: Sync issue fields with table fields
@@ -28,9 +28,9 @@ jobs:
           sync-fields: |
             [
               {
-                "label": "team:app-search",
+                "label": "label2",
                 "issueField": "",
                 "tableNumber": "1",
                 "tableField": ""}
             ]
-          ghToken: ${{ secrets.ELASTIC_ORG_GITHUB_ACTIONS_TOKEN }}
+          ghToken: ${{ secrets.GITHUB_TOKEN }}

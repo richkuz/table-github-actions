@@ -1,3 +1,5 @@
+console.log('*** TableActions');
+
 const core = require('@actions/core');
 const github = require('@actions/github');
 const { graphql } = require("@octokit/graphql");
