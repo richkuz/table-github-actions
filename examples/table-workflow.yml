@@ -1,0 +1,36 @@
+name: Table Automation
+on:
+  issues:
+    types: [labeled,unlabeled]
+
+jobs:
+  sync_issues_with_table:
+    runs-on: ubuntu-latest
+    name: Sync issues with table
+    steps:
+      - name: Sync issues with table
+        uses: richkuz/table-github-actions@master
+        id: sync_with_table
+        with:
+          sync-with-table: |
+            [
+              {"label": "team:app-search", "tableNumber": "1"}
+            ]
+          ghToken: ${{ secrets.ELASTIC_ORG_GITHUB_ACTIONS_TOKEN }}
+  sync_issues_with_table_fields:
+    runs-on: ubuntu-latest
+    name: Sync issue fields with table fields
+    steps:
+      - name: Sync issues with table
+        uses: richkuz/table-github-actions@master
+        id: sync_with_table
+        with:
+          sync-fields: |
+            [
+              {
+                "label": "team:app-search",
+                "issueField": "",
+                "tableNumber": "1",
+                "tableField": ""}
+            ]
+          ghToken: ${{ secrets.ELASTIC_ORG_GITHUB_ACTIONS_TOKEN }}
