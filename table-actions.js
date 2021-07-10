@@ -315,6 +315,7 @@ class TableActions {
     }
 
     async run() {
+        console.log('Running');
         const ghToken = core.getInput('ghToken');
         const octokit = graphql.defaults({
             headers: {
@@ -323,7 +324,9 @@ class TableActions {
         });
 
         try {
+            console.log('Fetching configs');
             const { syncWithTableConfigs, syncFieldsConfig } = this.getConfigs();
+            console.dir(syncWithTableConfigs);
             const context = this.normalizedGithubContext(github.context);
             if (context.action === "labeled") {
                 for (const syncWithTableConfig of syncWithTableConfigs) {
